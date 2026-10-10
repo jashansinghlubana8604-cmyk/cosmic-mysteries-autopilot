@@ -1,0 +1,8 @@
+.venv/
+work/
+out/
+.secrets/
+__pycache__/
+*.pyc
+work_log.txt
+*.draft

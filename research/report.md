@@ -1,0 +1,129 @@
+# Space-mystery proof of concept
+
+1167 videos (6+ min, since June 2023)
+
+## Top by outlier score (views / subscribers)
+
+- 716.0x | 2,105,153 views | 9.1m | Oddly Proven (2,940) | NASA Put Spiders in Zero Gravity. Then Something Strange Happened.
+- 390.1x | 390,110 views | 10.5m | Astrion X • 150K views • 1 day ago (792) | James Webb Just Spent 100 Hours Staring at 'EMPTY' Space — Here's What Was Hiding There!
+- 280.4x | 1,755,561 views | 7.0m | Ventus (6,260) | How Far Can The Voyager 1 Travel?
+- 268.6x | 1,195,169 views | 190.3m | UNSEEN OCEAN MYSTERIES (4,450) | Into the Atlantic | Exploring One of the Most Mysterious Oceans on Earth | 4K Documentary
+- 205.5x | 3,534,327 views | 9.9m | hollnes animated (17,200) | 5 Terrifying Sea Creatures You've Never Heard Of
+- 192.7x | 1,680,681 views | 9.0m | Juho Sprite (8,720) | Little Runmo - The Game in 08:29.38 (Any %) (PB)
+- 184.8x | 412,036 views | 6.3m | Deep Dive Space (2,230) | 5 Terrifying Things Astronauts Saw In Space
+- 183.6x | 18,915,475 views | 10.1m | Spacetime (103,000) | Journey to the edge of the Observable Universe
+- 178.5x | 2,926,775 views | 8.5m | Smifter (16,400) | Minecraft is Bigger than the Universe, by the way
+- 167.9x | 2,267,233 views | 18.3m | Captain Cipher (13,500) | Terrifying versions of Earth that actually Existed
+- 162.7x | 1,643,747 views | 19.2m | Chasing Space (10,100) | Voyager 2 Just Sent THIS Transmission From Beyond — And It’s Horrifying
+- 160.5x | 1,118,836 views | 16.6m | Space Buddy (6,970) | 10 Scariest Paradoxes in Physics That Prove Reality Is Not What We Think
+- 154.9x | 3,748,831 views | 20.6m | SciMind (24,200) | The Scariest Places In The Universe Explained
+- 151.2x | 3,674,336 views | 7.2m | BOU Stories TV (24,300) | The Biggest Thing In The Universe?!😮🙂
+- 142.3x | 3,102,152 views | 15.4m | Darkness Beyond (21,800) | The 18 Most Scary Sounds Ever Captured In Space!
+- 137.2x | 385,631 views | 21.1m | Stellar Frontier (2,810) | NASA Just Confirmed Voyager 1 Found Something Impossible
+- 134.8x | 479,778 views | 10.0m | Wonders Unveiled (3,560) | 10 Most Mysterious Natural Wonders Scientists Still Can’t Explain!
+- 130.8x | 15,699,740 views | 11.6m | BlenderTimer (120,000) | When MASSIVE Becomes TINY
+- 129.3x | 1,991,023 views | 16.3m | Movie Facts (15,400) | DUNE  - Full Timeline Of Universe / 35000 Years In 13 Minutes
+- 122.6x | 646,200 views | 113.5m | Disclosed (5,270) | The Most Horrifying Planets In The Universe | Space Documentary 2024
+- 120.1x | 1,146,092 views | 120.8m | DeepSleep Theory (9,540) | 2 Hours of the Craziest Philosophical Theories to Fall Asleep to
+- 115.6x | 457,778 views | 13.2m | Ad Caelum (3,960) | Como Foguetes se Movem no Espaço sem Ter Ar? | Ad Caelum
+- 111.6x | 6,907,119 views | 11.1m | Galaxian Journey (61,900) | Universe Size Comparison | 3D Animation Comparison
+- 105.2x | 1,673,423 views | 9.4m | MindFold (15,900) | 6 Most Mysterious Discoveries Scientists Cant Explain
+- 104.7x | 7,500,034 views | 8.7m | Yeti_ (71,600) | Big Scary Update…
+- 102.2x | 760,580 views | 18.4m | Coldfire Ambient SciFi (7,440) | Existential | Deep Space Ambient
+- 97.8x | 685,742 views | 428.6m | Arctic Audio (7,010) | James Webb Space Telescope  - Real 4K Footage of Our Universe from the NASA JWST with Relaxing Music
+- 90.8x | 200,619 views | 15.9m | Horizon TV (2,210) | एलियंस ने हमें एक और सन्देश भेजा है? New Interstellar Object Discovered In Our Solar System
+- 79.9x | 381,753 views | 19.0m | Fragmented Facts (4,780) | Every Unsolved Mystery Nobody Can Explain (Explained)
+- 77.6x | 13,038,102 views | 23.6m | So Weird w/ Patrick James (168,000) | The Great Pyramid Mystery: The Oldest Cover-Up In History
+- 76.2x | 1,120,257 views | 26.8m | Blue Nexus (14,700) | Scientists Explored the Mariana Trench—What They Found Is More Terrifying Than Space!
+- 73.9x | 169,163 views | 56.9m | Sea Bunz (2,290) | Dark Matter Reacts || FULL PART || watch in 2x speed
+- 72.9x | 1,181,266 views | 189.2m | Exolife (16,200) | 3 hours of mind-blowing Space Documentary for Sleep
+- 70.6x | 1,123,200 views | 25.3m | Space Time Narratives (15,900) | Every Terrifying Type Of Black Hole Explained
+- 69.8x | 1,193,186 views | 11.0m | Deep Seekerz (17,100) | The Mystery Of Leviathan : Is This a Warning For Us? | Deep Seekerz
+- 62.2x | 6,196,785 views | 10.4m | Cosmic Lens (99,700) | Why Saturn is The Scariest Planet (It’s Not Peaceful)
+- 61.2x | 141,350 views | 6.5m | Girandoelglobo (2,310) | El PAIS Mas MISTERIOSO del PLANETA | Costa Rica
+- 60.7x | 3,259,832 views | 8.9m | Interplanetary (53,700) | Universe Size Comparison | Solar System To Observable Universe | True Scale
+- 59.5x | 2,504,302 views | 91.9m | Now Next (42,100) | Mysteries of the Universe | Space Documentary 2023
+- 57.8x | 57,826 views | 8.8m | Wild Beast Exploration (270) | Wildlife of the Amazon Jungle – Meet the Planet’s Most Mysterious Hunters
+- 56.7x | 170,774 views | 18.0m | Space Report (3,010) | James Webb Telescope Just Detected a FULLY Habitable Planet
+- 56.6x | 56,621 views | 11.5m | Alien Hunter (832) | 3I/ATLAS: What’s The Worst Case Scenario? | Documentary For Sleep
+- 55.7x | 4,537,034 views | 25.2m | Proof (81,400) | NASA Just Confirmed Voyager 1 Found Something Impossible
+- 50.0x | 3,815,222 views | 9.8m | TIME VAULT  (76,300) | 10 Most Restricted Places on Earth You Can Never Visit | Hindi Travel Documentary.
+- 49.7x | 274,673 views | 11.8m | Celestial Enigma (5,530) | First Interstellar Object to Explode: 3I/Atlas Shatters Into Millions
+- 47.8x | 4,921,997 views | 60.0m | Futurescapes (103,000) | Sub Zero: Dark Sci Fi Music For Winter Relaxation (Deep And Relaxing)
+- 46.3x | 1,297,360 views | 167.0m | Paleora (28,000) | The Entire History of Earth | Full Documentary
+- 46.2x | 2,821,095 views | 133.5m | Silence of the Earth (61,100) | What If Dinosaurs Never Went Extinct? | Documentary for Sleep
+- 45.5x | 1,373,078 views | 61.4m | SunKran Travel (30,200) | 25 Most Mysterious Geological Wonders on Earth Still Unexplained | 4K Documentary
+- 45.2x | 1,812,605 views | 11.4m | Bluntly Explained (40,100) | Every Type Of Black Hole Explained in 11 Minutes
+- 45.0x | 818,847 views | 101.9m | Space Before After (18,200) | "It's a Different Universe" — James Webb Found Something That Doesn't Add Up
+- 44.6x | 2,337,803 views | 11.7m | NullSpace (52,400) | TON 618: The Black Hole That Breaks the Universe | 4K
+- 44.5x | 2,339,841 views | 98.6m | grdn (52,600) | The Complete Unexplainable/Incomprehensible Iceberg
+- 42.9x | 273,239 views | 11.5m | The CosmosScope • 428K 18h ago (6,370) | Nobel Winner Warns "IT'S ANOTHER UNIVERSE" James Webb Telescope Saw Strange Things Beyond the...
+- 41.1x | 2,816,968 views | 20.0m | Astrovía (68,600) | James Webb Acaba de Ver Plutón por Primera Vez y No Debería Ser Posible
+- 40.6x | 40,567 views | 6.2m | Release - Topic (87) | Strange Signal
+- 40.3x | 113,343 views | 15.4m | Stellar Frontier (2,810) | 3I/ATLAS Just Sent Back a Strange Signal—Scientists Had to Investigate
+- 40.1x | 2,222,786 views | 80.6m | Actual Space (55,400) | An Epic Journey Around The Milky Way | Space Documentary 2024
+- 39.1x | 2,047,147 views | 22.8m | NullSpace (52,400) | VOYAGER 1: The Story of the Next 10 Trillion Years | 4K
+- 38.9x | 342,594 views | 23.6m | Quantum Grid (8,800) | James Webb Telescope Just Detected TERRIFYING Object in Space!
+
+## Top by views per day
+
+- 973,299/day | 16,546,081 | 28.9m | Dhruv Rathee | Deep Sea Mysteries That Science Can't Explain! | Dhruv Rathee
+- 671,571/day | 6,044,137 | 29.9m | GetsetflySCIENCE by Gaurav Thakur | Something Strange is Happening on Mars
+- 348,391/day | 3,135,522 | 14.8m | The Space Race | Something Weird Is Happening On Europa
+- 184,403/day | 14,383,434 | 24.9m | Dhruv Rathee | What Happens After Death? | Does Aatma really Exist? | Dhruv Rathee
+- 172,863/day | 2,247,224 | 25.9m | SciCo | Indian Scientist Found Something STRANGER Than a Black Hole
+- 168,718/day | 1,855,896 | 33.2m | The Infographics Show | Voyager 2 Discovered Something Strange at the Edge of Our Solar System
+- 140,344/day | 2,105,153 | 9.1m | Oddly Proven | NASA Put Spiders in Zero Gravity. Then Something Strange Happened.
+- 125,595/day | 2,763,080 | 11.6m | Good Enough | The Rarest Things in the Universe
+- 120,279/day | 481,117 | 18.7m | Cool Worlds | Did We Finally Detect Dark Matter Directly?
+- 103,534/day | 414,137 | 15.8m | अंतरिक्ष TV by Kaushik Bhattacharjee | Scientists Found Something Impossible in Space
+- 98,297/day | 11,992,192 | 34.3m | Veritasium | Something is jamming GPS over Europe. Here's what we found
+- 84,924/day | 21,400,834 | 23.3m | Dhruv Rathee | Why No One Can Climb Mount Kailash? | The Mystery Revealed | Dhruv Rathee
+- 80,422/day | 2,895,189 | 17.6m | Gaurav Katare | The Soviet space Mission That Took Photos From Hell
+- 78,592/day | 6,916,072 | 108.8m | The Diary Of A CEO | Neil deGrasse Tyson: The Whistleblowers Were Right About Aliens
+- 73,147/day | 3,730,488 | 42.2m | HISTORY | Inside the World's Most Mysterious Pyramids | The UnXplained
+- 70,134/day | 2,735,208 | 15.3m | PBS Space Time | JWST May Have Discovered a New Cosmic Object: The Black Hole Star
+- 64,272/day | 385,631 | 21.1m | Stellar Frontier | NASA Just Confirmed Voyager 1 Found Something Impossible
+- 58,843/day | 13,239,626 | 23.6m | Dhruv Rathee | The Terrifying Story of Flight 236 | Dhruv Rathee
+- 58,076/day | 16,842,135 | 44.3m | Veritasium | There Is Something Faster Than Light
+- 51,374/day | 31,183,851 | 21.5m | Veritasium | Can You Keep Zooming In Infinitely?
+- 49,858/day | 4,537,034 | 25.2m | Proof | NASA Just Confirmed Voyager 1 Found Something Impossible
+- 49,735/day | 1,889,912 | 12.8m | Everyday Astronaut | Why NASA's new Roman Space Telescope is a huge deal
+- 44,451/day | 21,247,527 | 31.5m | Jordan Matter | MY DAD IS MISSING! *Game of Chase*
+- 43,179/day | 2,115,757 | 131.7m | The Diary Of A CEO | Professor Brian Greene: The Threat of AI, Consciousness & The End of Humanity
+- 42,823/day | 24,408,914 | 24.1m | Dhruv Rathee | Why are DEEP SEA Creatures Coming to Surface? | Leviathan Mystery | Dhruv Rathee
+- 42,018/day | 37,312,346 | 37.0m | Veritasium | Something Strange Happens When You Follow Einstein's Math
+- 40,748/day | 1,507,673 | 24.3m | AstroKobi | NASA's New Telescope Might Break Physics
+- 40,408/day | 15,355,155 | 30.2m | Manx Ninja Pig | Mario Odyssey, but Every Moon = MORE SCARY…
+- 39,644/day | 8,285,616 | 9.2m | Kurzgesagt – In a Nutshell | This Is the Scariest Place in The Universe
+- 39,255/day | 1,059,877 | 14.0m | Astro Kirsten | JWST Found Something New: Black Hole Stars
+- 39,068/day | 3,398,920 | 13.9m | Territory | Astronomers Have Now Spotted Galaxies So Far Away, It Raises Troubling Questions
+- 35,658/day | 2,816,968 | 20.0m | Astrovía | James Webb Acaba de Ver Plutón por Primera Vez y No Debería Ser Posible
+- 35,650/day | 178,248 | 40.0m | Haunting Tube | Best Multiverse Thriller Series of 2026 - Dark Matter (Season 2) Explained in Hindi
+- 35,339/day | 2,403,055 | 16.1m | Gaurav Katare | Leviathan, Kraken or A Prehistoric Animal? The Deep Sea Sound Mystery!
+- 34,921/day | 20,219,518 | 33.0m | Veritasium | The Strangest Implication of Quantum Mechanics
+- 34,725/day | 25,002,270 | 26.2m | Dhruv Rathee | NASA’s Search for Aliens | The Voyager Missions | Dhruv Rathee
+- 33,945/day | 441,283 | 14.1m | अंतरिक्ष TV by Kaushik Bhattacharjee | Something Big Was Found on Mars
+- 33,675/day | 740,855 | 15.7m | Anton Petrov | Hubble Reveals a Bizarre Decagon in Saturn's Atmosphere
+- 33,285/day | 10,118,689 | 35.4m | Veritasium | Why is there antimatter?
+- 32,972/day | 989,152 | 38.5m | CaylusCraft | This DREAMCORE Mod Is Terrifying..
+- 30,438/day | 33,146,903 | 27.8m | Dhruv Rathee | Mystery of Flight 571 | World's Greatest Miracle | Dhruv Rathee
+- 30,283/day | 16,201,610 | 21.7m | Dhruv Rathee | Can Humans Ever Leave the Milky Way Galaxy? | The Wormholes Explained | Dhruv Rathee
+- 30,229/day | 1,027,784 | 9.0m | Territory | JWST Spots the First Ever Black Hole Star and It's Absolutely Bizarre
+- 30,159/day | 12,515,949 | 47.5m | FaZe Rug | I Bought A Mystery Box From EVERY Viral Brand!
+- 29,882/day | 19,602,683 | 29.0m | Dhruv Rathee | Yeti Mystery Finally SOLVED by Science! | Dhruv Rathee
+- 29,091/day | 203,637 | 18.6m | Mr. BonGrow Science | যদি ভয়েজার 1 কোনো এলিয়েন গ্রহে ক্র্যাশ করে? | Voyager 1 Journey till the End!
+- 28,867/day | 27,394,975 | 25.6m | Dhruv Rathee | Mystery of DB Cooper | Man who Vanished in the Sky! | Dhruv Rathee
+- 28,818/day | 1,527,377 | 62.9m | Numberblocks | Who Sent the Space Signal? | Learn to Count for Kids Compilation | Number Cartoon | Numberblocks
+- 28,755/day | 1,121,456 | 19.4m | Astrum | We Caught a Black Hole Switching On For the First Time
+- 27,652/day | 4,783,716 | 15.5m | The Paint Explainer | The Most Disturbing Scientific Anomalies We Can’t Find An Explanation For (Pt. 2)
+- 27,513/day | 30,951,729 | 67.4m | BBC Earth | Travel to the Depths of Our Mysterious Oceans | 4K UHD | Blue Planet II | BBC Earth
+- 27,352/day | 1,750,504 | 30.1m | Evrim Ağacı | Evrenin Sınırına Gitsek Ne Görürdük?
+- 27,297/day | 354,857 | 13.4m | Anton Petrov | Earth’s Magnetic Field Just Picked Up a Bizarre, Unexplained Signal
+- 26,820/day | 3,674,336 | 7.2m | BOU Stories TV | The Biggest Thing In The Universe?!😮🙂
+- 26,228/day | 7,658,587 | 47.6m | HISTORY | Greatest Unsolved Mysteries Ever | Mysteries Unearthed with Danny Trejo
+- 26,141/day | 2,953,903 | 17.3m | Gaurav Katare | The Impossible Discovery Hiding Under Antarctica
+- 26,105/day | 31,117,161 | 27.2m | Veritasium | The Most Misunderstood Concept in Physics
+- 25,933/day | 13,977,713 | 27.7m | Veritasium | The Biggest Misconception in Physics
+- 25,505/day | 27,136,906 | 25.5m | Dhruv Rathee | The Concordia Cruise Mystery | What Went Wrong? | Titanic of 2012 | Dhruv Rathee
+- 25,191/day | 2,267,233 | 18.3m | Captain Cipher | Terrifying versions of Earth that actually Existed

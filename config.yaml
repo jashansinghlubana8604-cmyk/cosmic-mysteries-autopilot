@@ -1,0 +1,29 @@
+# Cosmic mysteries autopilot settings. Safe to edit; the next run picks changes up.
+
+channel:
+  name: ""                      # never shown on screen
+
+voice:
+  edge_voice: en-US-AndrewMultilingualNeural
+  rate: "-2%"
+  pitch: "-2Hz"
+
+music:
+  level_db: 1.5                # music bed level when the narrator is silent (relative)
+  duck_db: -11.0                # how far the music dips under the narration
+
+render:
+  crf: 19
+  preset: medium
+  min_minutes: 8.15            # never publish under 8:00 (mid-roll ads); short scripts get longer pauses
+
+schedule:
+  timezone: Asia/Kolkata
+  publish_window: ["04:15", "05:00"]   # random minute in this window each day (local to the timezone above)
+  publish_time: "04:30"         # used only if publish_window is removed
+  days_ahead: 1                 # keep tomorrow's video uploaded and scheduled in advance
+  start_date: "2026-10-11"      # first publish day
+  min_lead_minutes: 90
+
+writer:
+  queue: 14                     # keep this many unposted scripts ready (new ones are written with Claude)
