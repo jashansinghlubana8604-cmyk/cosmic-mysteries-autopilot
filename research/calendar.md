@@ -73,7 +73,7 @@ Format per line: `number | file key | working title | angle`
 ## Months 3–4
 091 | supernova-1987a | The Closest Exploding Star in 400 Years | SN 1987A and Webb's neutron star clue
 092 | brown-dwarfs | The Stars That Failed | brown dwarfs, cold as a cup of tea
-093 | what-if-fall-into-jupiter | What If You Fell Into Jupiter? | the descent, layer by layer
+093 | perseus-black-hole-note | A Black Hole Has Been Humming One Note for Billions of Years | Perseus cluster pressure waves, B-flat 57 octaves below middle C
 094 | kessler-syndrome | The Cloud of Junk That Could Trap Us on Earth | Kessler syndrome
 095 | cygnus-x1 | The First Black Hole Ever Found | Cygnus X-1, Hawking's bet
 096 | ceres | The Strange Bright Spots on Ceres | Dawn, salt, a buried ocean
