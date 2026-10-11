@@ -33,6 +33,9 @@ mood: mystery
 > i: telescope night | v: telescope dome
 On the night of the twenty fourth of March 1993, three comet hunters, Carolyn and Eugene Shoemaker and David Levy, were working at the Palomar Observatory in California. The sky was partly cloudy, and they almost did not bother to take pictures. They used old photographic film that had been slightly damaged.
 
+> i: telescope dome | v: telescope night
+The team were among the most successful comet hunters of their time. Carolyn Shoemaker, who only began searching the sky in her fifties, went on to discover more comets than almost anyone in history, by patiently comparing pairs of photographs under a stereo microscope, looking for anything that moved. [pause] This one would become the most famous of all.
+
 > i: comet shoemaker levy 9 fragments | v: comet
 When Carolyn Shoemaker examined the images, she noticed something strange near Jupiter. It looked like a squashed comet. Not a single fuzzy blob with a tail, but a long, thin bar of light. [pause] Later observations revealed what it really was: a line of separate fragments, travelling together.
 
@@ -49,6 +52,9 @@ The Hubble Space Telescope photographed the comet in stunning detail. It showed 
 
 > i: jupiter | v: jupiter
 Astronomers gave each fragment a letter, from A to W. They calculated when each would strike. Unfortunately, the impacts would happen on Jupiter's far side, just beyond the edge visible from Earth. But Jupiter spins fast, once every ten hours. [pause] The impact sites would rotate into view within minutes.
+
+> i: telescope night | v: telescope dome
+Observatories around the world prepared for the event. Amateur astronomers planned their nights. Yet nobody knew whether there would be anything to see at all. The fragments might simply disappear into Jupiter's clouds without a trace. [pause] It was the most anticipated astronomical event in years, and the most uncertain.
 
 > i: galileo spacecraft | v: galileo spacecraft
 And one observer had a direct view. NASA's Galileo spacecraft, on its way to Jupiter, was positioned to see the far side. It would watch the impacts happen.
@@ -72,6 +78,9 @@ mood: mystery
 > i: jupiter impact scars | v: jupiter
 The impacts revealed Jupiter's hidden chemistry. The explosions dredged up material from below the clouds, including sulphur, ammonia and water. The dark scars were made of debris from the comet mixed with the planet's own atmosphere.
 
+> i: galileo spacecraft | v: galileo spacecraft
+From its position in space, the Galileo spacecraft recorded the flashes directly, as each fragment burned into the atmosphere and exploded. Combined with the views from Earth and from Hubble, scientists could reconstruct the impacts second by second. [pause] It was the first time a collision between two bodies in the solar system had ever been observed as it happened.
+
 > i: earth from space | v: earth from space
 But the biggest lesson was about the Earth. The scars left by single fragments of a fairly small comet were as big as our entire planet. If something like that hit the Earth, the consequences would be catastrophic. [pause] Suddenly, cosmic impacts were not just ancient history or science fiction. They were happening, in our solar system, in our lifetimes.
 
@@ -84,10 +93,10 @@ mood: wonder
 And Jupiter keeps getting hit. In July 2009, an Australian amateur astronomer named Anthony Wesley, observing from his back garden, spotted a fresh dark scar on Jupiter. Something, probably an asteroid, had just struck it. Since then, amateurs with video cameras have caught several brief flashes of objects hitting the giant planet.
 
 > i: jupiter juno | v: jupiter
-Jupiter's enormous gravity pulls in comets and asteroids. Some scientists think it shields the inner planets by catching or flinging away some of these objects. Others point out it can also send some towards us. Either way, Jupiter is the biggest target in the solar system.
+Jupiter's enormous gravity pulls in comets and asteroids. Shoemaker-Levy 9 was not unique in being captured. Several comets are known to have been temporarily caught by Jupiter's gravity, looping around it for years or decades before being flung back out into the solar system. Some scientists think it shields the inner planets by catching or flinging away some of these objects. Others point out it can also send some towards us. Either way, Jupiter is the biggest target in the solar system.
 
 > i: jupiter impact scars | v: jupiter storm
-Eugene Shoemaker, one of the discoverers, was a pioneer of the study of impact craters. He died in 1997. Some of his ashes were carried to the Moon aboard NASA's Lunar Prospector spacecraft, which ended its mission by crashing near the lunar south pole. [pause] He remains the only person whose remains rest on another world. A fitting tribute to the man who taught us to take the sky seriously.
+Eugene Shoemaker, one of the discoverers, was a pioneer of the study of impact craters. He died in 1997. Some of his ashes were carried to the Moon aboard NASA's Lunar Prospector spacecraft, which ended its mission by crashing near the lunar south pole. [pause] He became the first person whose remains were placed on another world. A fitting tribute to the man who taught us to take the sky seriously.
 
 [outro]
 > v: jupiter rotation | i: jupiter
