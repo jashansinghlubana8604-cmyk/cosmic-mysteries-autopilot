@@ -21,7 +21,7 @@ schedule:
   timezone: Asia/Kolkata
   publish_window: ["04:15", "04:45"]   # random minute in this window each day (local to the timezone above)
   publish_time: "04:30"         # used only if publish_window is removed
-  days_ahead: 1                 # keep tomorrow's video uploaded and scheduled in advance
+  days_ahead: 2                 # keep the next two days uploaded and scheduled (a failed or late run never misses a day)
   start_date: "2026-10-12"      # first publish day
   min_lead_minutes: 90
 
