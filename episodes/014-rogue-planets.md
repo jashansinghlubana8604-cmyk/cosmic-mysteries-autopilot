@@ -1,7 +1,7 @@
 ---
 title: Billions of Planets Are Drifting Alone in the Dark
 card: The Rogue Planets
-thumb: NO SUN. NO HOME. | ROGUE PLANETS
+thumb: NO SUN. NO *HOME.* | ROGUE PLANETS
 thumb_style: cinematic
 thumb_query: i: rogue planet | i: free-floating planet | i: lonely planet artist
 mood: wonder

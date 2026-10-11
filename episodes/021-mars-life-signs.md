@@ -1,9 +1,9 @@
 ---
 title: Something Strange Is Happening on Mars
 card: The Mysteries Of Mars
-thumb: SOMETHING ON MARS
+thumb: SOMETHING ON *MARS*
 thumb_style: headline
-thumb_query: i: mars | i: mars surface | i: mars planet
+thumb_query: i: mars opposition | n: mars global color | i: mars
 mood: mystery
 tags: mars, life on mars, perseverance rover, cheyava falls, mars methane, ancient ocean mars, jezero crater, curiosity rover, mars mystery, space documentary
 fallback: mars | mars surface | mars rover | red planet | jezero crater

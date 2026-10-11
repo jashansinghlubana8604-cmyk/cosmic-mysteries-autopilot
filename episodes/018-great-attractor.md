@@ -1,7 +1,7 @@
 ---
 title: Something Massive Is Pulling Our Galaxy, And We Can't See It
 card: The Great Attractor
-thumb: SOMETHING IS PULLING US
+thumb: SOMETHING IS *PULLING* US
 thumb_style: headline
 thumb_query: i: galaxy cluster | i: spiral galaxy | i: milky way centre
 mood: mystery

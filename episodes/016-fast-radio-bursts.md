@@ -1,7 +1,7 @@
 ---
 title: Thousands of Mysterious Signals Hit Earth Every Day
 card: Fast Radio Bursts
-thumb: SIGNALS FROM NOWHERE | FAST RADIO BURSTS
+thumb: SIGNALS FROM *NOWHERE* | FAST RADIO BURSTS
 thumb_style: cinematic
 thumb_query: i: magnetar | i: neutron star | i: radio telescope milky way
 mood: mystery

@@ -63,7 +63,9 @@ def description(ep: Episode, chapters: list[tuple[float, str]], credits: list[st
         parts.append("Music:")
         parts += lines
         parts.append("")
-    tags = ["#space", "#astronomy", "#spacemystery"]
+    topic = re.sub(r"[^a-z0-9]", "", ep.tags[0].lower()) if ep.tags else ""
+    tags = ([f"#{topic}"] if topic else []) + ["#space", "#astronomy", "#spacemystery"]
+    tags = tags[:3]                         # YouTube shows the first three above the title
     parts.append(" ".join(tags))
     text = "\n".join(parts)
     return text[:4900]

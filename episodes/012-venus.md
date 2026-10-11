@@ -1,9 +1,9 @@
 ---
 title: The Real Surface of Venus Is Worse Than Anyone Imagined
 card: Venus
-thumb: THIS IS VENUS
+thumb: THIS IS *VENUS*
 thumb_style: headline
-thumb_query: i: venus | i: venus surface | i: venus planet
+thumb_query: n: PIA23791 | n: PIA00271 | i: venus planet
 mood: dread
 tags: venus, real images of venus, venus surface, venera 13, hottest planet, venus volcanoes, phosphine venus, runaway greenhouse effect, earth's twin, space documentary
 fallback: venus | venus surface | sun | volcano planet | solar system

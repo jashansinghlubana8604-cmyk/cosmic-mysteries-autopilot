@@ -102,6 +102,66 @@ def text_score(img: np.ndarray) -> float:
     return total / area if lines >= 2 else 0.0
 
 
+def _gray960(img: np.ndarray) -> np.ndarray:
+    h, w = img.shape[:2]
+    return cv2.cvtColor(cv2.resize(img, (960, max(1, int(h * 960 / w))), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2GRAY)
+
+
+def box_corners(gray: np.ndarray) -> int:
+    """Corners of thin straight-edged boxes (insets, zoom frames, panel borders). A corner is where a horizontal and
+    a vertical line both END; diffraction spikes cross through their middles, so stars don't count."""
+    th = cv2.morphologyEx(gray, cv2.MORPH_TOPHAT, cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7)))
+    m = (th > 45).astype(np.uint8)
+    hor = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((1, 40), np.uint8))
+    ver = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((40, 1), np.uint8))
+    meet = cv2.dilate(hor, np.ones((5, 5), np.uint8)) & cv2.dilate(ver, np.ones((5, 5), np.uint8))
+    n, _, _, cen = cv2.connectedComponentsWithStats(meet)
+    H, W = gray.shape
+
+    def has(mask, x, y):
+        return mask[max(0, y - 2):min(H, y + 3), max(0, x - 2):min(W, x + 3)].any()
+
+    found = 0
+    for cx, cy in cen[1:].astype(int):
+        if has(hor, cx - 12, cy) != has(hor, cx + 12, cy) and has(ver, cx, cy - 12) != has(ver, cx, cy + 12):
+            found += 1
+    return found
+
+
+def plain_labels(gray: np.ndarray) -> int:
+    """Bright text lines sitting on plain dark sky ('Mars Opposition', '2016'): short words text_score lets through."""
+    grad = cv2.morphologyEx(gray, cv2.MORPH_GRADIENT, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3)))
+    _, bw = cv2.threshold(grad, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+    if (bw > 0).mean() > 0.35:
+        return 0
+    conn = cv2.morphologyEx(bw, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_RECT, (11, 1)))
+    n, _, stats, _ = cv2.connectedComponentsWithStats(conn, connectivity=8)
+    H, W = gray.shape
+    hits = 0
+    for x, y, cw, ch, a in stats[1:]:
+        if not (14 <= ch <= 70 and cw >= 2.6 * ch and 0.45 <= a / float(cw * ch) <= 0.92):
+            continue
+        if np.count_nonzero(np.diff(bw[y + ch // 2, x:x + cw].astype(np.int16))) / cw <= 0.15:
+            continue
+        p = ch
+        ring = gray[max(0, y - p):min(H, y + ch + p), max(0, x - p):min(W, x + cw + p)]
+        inner = np.zeros(ring.shape, bool)
+        inner[min(p, y):min(p, y) + ch, min(p, x):min(p, x) + cw] = True
+        if (ring[~inner] < 25).mean() > 0.85 and gray[y:y + ch, x:x + cw].max() > 150:
+            hits += 1
+    return hits
+
+
+def annotated(img: np.ndarray) -> str:
+    """Press-release graphics a thumbnail must never show: inset boxes or caption labels."""
+    gray = _gray960(img)
+    if box_corners(gray) >= 2:
+        return "boxes"
+    if plain_labels(gray) >= 2:
+        return "labels"
+    return ""
+
+
 def beauty(img: np.ndarray) -> float:
     """0..1: how striking a frame is (colourfulness, contrast, fine detail, a bright subject on dark)."""
     h, w = img.shape[:2]

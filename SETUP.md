@@ -1,7 +1,7 @@
 # One-time setup
 
 Do these once. After step 6 the channel runs by itself: every day GitHub makes the next video, uploads it, sets the
-thumbnail and subtitles, and schedules it for a random minute between 4:15 and 5:00 am IST. When fewer than 14
+thumbnail and subtitles, and schedules it for a random minute between 4:15 and 4:45 am IST. When fewer than 14
 scripts are waiting, Claude researches and writes new ones. If anything ever fails, GitHub emails you.
 
 Until Google approves the API audit (step 4, usually 2–4 weeks), YouTube keeps every API upload **private**, so

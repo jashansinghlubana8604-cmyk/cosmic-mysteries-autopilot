@@ -1,7 +1,7 @@
 ---
 title: This Is How the Universe Will End
 card: The End Of Everything
-thumb: THE LAST LIGHT | THE END OF THE UNIVERSE
+thumb: THE LAST *LIGHT* | THE END OF THE UNIVERSE
 thumb_style: cinematic
 thumb_query: i: red dwarf | i: dying star planetary nebula | i: white dwarf
 mood: wonder

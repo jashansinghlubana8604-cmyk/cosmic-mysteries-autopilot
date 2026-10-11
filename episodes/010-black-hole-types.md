@@ -1,7 +1,7 @@
 ---
 title: Every Type of Black Hole, From Tiny to Terrifying
 card: Every Kind Of Black Hole
-thumb: EVERY BLACK HOLE | FROM TINY TO TERRIFYING
+thumb: EVERY *BLACK HOLE* | FROM TINY TO TERRIFYING
 thumb_style: cinematic
 thumb_query: i: black hole artist impression | i: black hole accretion disc | i: supermassive black hole
 mood: wonder

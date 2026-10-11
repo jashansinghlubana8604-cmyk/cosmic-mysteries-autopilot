@@ -611,7 +611,7 @@ def produce(ep: Episode, cfg: dict, work: Path, cache: Path, *, seed: int, chann
     fx.fetch(hero_cands[:14])
     from . import thumbnail
     thumbs = thumbnail.candidates(ep, fx)
-    hero: Path | None = thumbnail.striking(thumbs) or (thumbs[0] if thumbs else None)
+    hero: Path | None = thumbnail.choose(ep, thumbs) or (thumbs[0] if thumbs else None)
     if hero is None:
         imgs = sorted((m for m in fx.media.values() if m.kind == "image"), key=lambda m: -m.beauty)
         hero = imgs[0].path if imgs else None

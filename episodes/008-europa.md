@@ -1,9 +1,9 @@
 ---
 title: Something Strange Is Happening Beneath the Ice of Europa
 card: Europa
-thumb: THIS IS EUROPA
+thumb: THIS IS *EUROPA*
 thumb_style: headline
-thumb_query: i: europa | i: europa jupiter moon | i: europa surface
+thumb_query: n: PIA19048 | n: europa jupiter-facing hemisphere | i: europa
 mood: mystery
 tags: europa, jupiter moon europa, europa ocean, life on europa, europa clipper, europa plumes, ice spikes europa, alien ocean, juice mission, space mystery
 fallback: europa | jupiter | ice moon | ocean world | enceladus

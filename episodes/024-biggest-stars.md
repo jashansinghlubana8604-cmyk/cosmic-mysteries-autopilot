@@ -1,7 +1,7 @@
 ---
 title: The Biggest Stars in the Universe Will Break Your Brain
 card: The Biggest Stars In The Universe
-thumb: BIGGER THAN SATURN'S ORBIT | THE LARGEST STARS
+thumb: BIGGER THAN SATURN'S *ORBIT* | THE LARGEST STARS
 thumb_style: cinematic
 thumb_query: i: red supergiant | i: betelgeuse | i: red supergiant star
 mood: wonder

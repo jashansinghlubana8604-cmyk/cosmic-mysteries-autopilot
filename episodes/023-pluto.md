@@ -1,9 +1,9 @@
 ---
 title: What NASA Found on Pluto Changed Everything
 card: The Heart Of Pluto
-thumb: WHAT WE FOUND ON PLUTO
+thumb: WHAT WE FOUND ON *PLUTO*
 thumb_style: headline
-thumb_query: n: pluto new horizons | n: pluto | i: pluto
+thumb_query: n: PIA19857 | n: pluto true color | n: pluto enhanced color
 mood: wonder
 tags: pluto, new horizons, pluto heart, sputnik planitia, pluto ocean, is pluto a planet, kuiper belt, arrokoth, nasa pluto, space documentary
 fallback: pluto | new horizons | kuiper belt | charon | ice world

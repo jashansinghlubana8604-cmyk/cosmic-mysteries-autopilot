@@ -1,7 +1,7 @@
 ---
 title: Something Huge Is Hiding at the Edge of Our Solar System
 card: Planet Nine
-thumb: SOMETHING IS OUT THERE | PLANET NINE
+thumb: SOMETHING IS *OUT THERE* | PLANET NINE
 thumb_style: cinematic
 thumb_query: i: planet nine | i: distant planet | i: ice giant planet
 mood: mystery

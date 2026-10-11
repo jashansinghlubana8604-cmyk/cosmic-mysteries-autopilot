@@ -188,8 +188,9 @@ def _cached_json(url: str, params: dict, cache: Path, ttl_days: float = 20) -> d
 
 def search_nasa(query: str, kind: str | None, cache: Path) -> list[Asset]:
     media = kind or "image,video"
-    data = _cached_json("https://images-api.nasa.gov/search", {"q": query, "media_type": media, "page_size": 60},
-                        cache)
+    by_id = bool(re.fullmatch(r"PIA\d{5}", query.strip()))          # an exact image, e.g. a pinned thumbnail
+    params = {"nasa_id": query.strip()} if by_id else {"q": query, "media_type": media, "page_size": 60}
+    data = _cached_json("https://images-api.nasa.gov/search", params, cache)
     if not data:
         return []
     qt = _tokens(query)
@@ -202,7 +203,7 @@ def search_nasa(query: str, kind: str | None, cache: Path) -> list[Asset]:
         desc = d.get("description", "")[:600]
         if BAD_TITLE.search(title) or BAD_TITLE.search(desc[:160]):
             continue
-        if not NASA_GOOD.search(title) or NASA_PEOPLE.search(title) or NASA_PEOPLE.search(desc[:250]):
+        if (not by_id and not NASA_GOOD.search(title)) or NASA_PEOPLE.search(title) or NASA_PEOPLE.search(desc[:250]):
             continue
         if re.match(r"^[A-Z .,\-]{12,}", title):           # "KENNEDY SPACE CENTER, FLA. - ..." event captions
             continue
@@ -211,7 +212,7 @@ def search_nasa(query: str, kind: str | None, cache: Path) -> list[Asset]:
         sec = d.get("secondary_creator") or d.get("photographer") or ""
         if NOT_PD.search(sec) or NOT_PD.search(desc) or NOT_PD.search(d.get("copyright", "") or ""):
             continue
-        m = _match(qt, title)
+        m = 1.0 if by_id else _match(qt, title)
         if m < 0.66:
             continue
         score = m * 0.9 + (0.15 if mt == "video" else 0.0)

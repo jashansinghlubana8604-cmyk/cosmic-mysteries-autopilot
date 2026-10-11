@@ -1,7 +1,7 @@
 ---
 title: The Great Nothing: A Hole in the Universe That Shouldn't Exist
 card: The Boötes Void
-thumb: THE GREAT NOTHING | BOÖTES VOID
+thumb: THE GREAT *NOTHING* | BOÖTES VOID
 thumb_style: cinematic
 thumb_query: i: cosmic web | i: hubble deep field | i: galaxies deep field
 mood: mystery

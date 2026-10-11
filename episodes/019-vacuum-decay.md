@@ -1,7 +1,7 @@
 ---
 title: The Universe Could End at Any Moment. Here's Why
 card: Vacuum Decay
-thumb: IT COULD END TODAY | VACUUM DECAY
+thumb: IT COULD END *TODAY* | VACUUM DECAY
 thumb_style: cinematic
 thumb_query: i: cosmic bubble | i: supernova remnant bubble | i: nebula bubble
 mood: dread

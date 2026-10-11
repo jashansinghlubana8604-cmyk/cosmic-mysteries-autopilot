@@ -19,10 +19,10 @@ render:
 
 schedule:
   timezone: Asia/Kolkata
-  publish_window: ["04:15", "05:00"]   # random minute in this window each day (local to the timezone above)
+  publish_window: ["04:15", "04:45"]   # random minute in this window each day (local to the timezone above)
   publish_time: "04:30"         # used only if publish_window is removed
   days_ahead: 1                 # keep tomorrow's video uploaded and scheduled in advance
-  start_date: "2026-10-11"      # first publish day
+  start_date: "2026-10-12"      # first publish day
   min_lead_minutes: 90
 
 writer:

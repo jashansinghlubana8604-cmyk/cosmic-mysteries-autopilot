@@ -1,7 +1,7 @@
 ---
 title: 85% of All Matter Is Missing. We Still Can't Find It
 card: Dark Matter
-thumb: 85% IS MISSING | DARK MATTER
+thumb: 85% IS *MISSING* | DARK MATTER
 thumb_style: cinematic
 thumb_query: i: dark matter map | i: bullet cluster | i: galaxy cluster dark matter
 mood: mystery

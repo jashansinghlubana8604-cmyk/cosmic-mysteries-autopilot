@@ -1,7 +1,7 @@
 ---
 title: The Star That Made Astronomers Think of Alien Megastructures
 card: Tabby's Star
-thumb: SOMETHING BLOCKED IT | TABBY'S STAR
+thumb: SOMETHING *BLOCKED* IT | TABBY'S STAR
 thumb_style: cinematic
 thumb_query: i: debris disc star | i: dust disc star | i: dyson sphere
 mood: mystery

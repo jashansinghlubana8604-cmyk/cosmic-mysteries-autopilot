@@ -1,9 +1,9 @@
 ---
 title: The Only Other World With Rain, Rivers and Seas
 card: Titan
-thumb: IT RAINS HERE | TITAN
+thumb: IT RAINS *HERE* | TITAN
 thumb_style: cinematic
-thumb_query: i: titan | i: titan saturn moon | i: titan surface
+thumb_query: n: PIA23172 | n: titan lakes | i: titan saturn
 mood: wonder
 tags: titan, saturn moon titan, titan methane lakes, huygens probe, dragonfly mission, life on titan, kraken mare, cassini titan, alien world, space documentary
 fallback: titan | saturn | cassini | huygens | ice moon

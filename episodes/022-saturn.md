@@ -1,7 +1,7 @@
 ---
 title: Saturn Is Far Stranger Than It Looks
 card: The Secrets Of Saturn
-thumb: SATURN IS NOT PEACEFUL
+thumb: SATURN IS NOT *PEACEFUL*
 thumb_style: headline
 thumb_query: i: saturn | i: saturn cassini | i: saturn rings
 mood: wonder

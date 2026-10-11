@@ -1,7 +1,7 @@
 ---
 title: What Is Outside the Universe?
 card: What Lies Outside The Universe
-thumb: WHAT IS OUTSIDE? | BEYOND THE UNIVERSE
+thumb: WHAT IS *OUTSIDE?* | BEYOND THE UNIVERSE
 thumb_style: cinematic
 thumb_query: i: cosmic web | i: universe | i: hubble ultra deep field
 mood: mystery

@@ -1,7 +1,7 @@
 ---
 title: The Object From Another Star That Broke Every Rule
 card: 'Oumuamua
-thumb: NOT FROM HERE | 'OUMUAMUA
+thumb: NOT FROM *HERE* | 'OUMUAMUA
 thumb_style: cinematic
 thumb_query: i: impression interstellar asteroid oumuamua | i: oumuamua
 mood: mystery

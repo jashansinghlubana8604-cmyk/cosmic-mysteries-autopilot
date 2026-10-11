@@ -1,7 +1,7 @@
 ---
 title: The Universe Is Expanding at Two Different Speeds
 card: The Hubble Tension
-thumb: SOMETHING IS WRONG
+thumb: SOMETHING IS *WRONG*
 thumb_style: headline
 thumb_query: i: deep field galaxies | i: hubble ultra deep field | i: galaxy cluster webb
 mood: mystery

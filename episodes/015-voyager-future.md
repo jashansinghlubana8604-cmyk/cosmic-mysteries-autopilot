@@ -1,7 +1,7 @@
 ---
 title: Where Will Voyager 1 Be in a Trillion Years?
 card: Voyager's Endless Journey
-thumb: LONG AFTER US | VOYAGER 1
+thumb: LONG AFTER *US* | VOYAGER 1
 thumb_style: cinematic
 thumb_query: n: voyager deep space artist concept | n: voyager artist concept | i: milky way
 mood: wonder

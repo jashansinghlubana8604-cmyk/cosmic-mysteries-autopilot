@@ -26,9 +26,28 @@ WHITE = (250, 250, 248)
 
 def striking(paths: list[Path], top: int = 5) -> Path | None:
     """Of the first `top` candidates (already ranked by relevance), the most beautiful clean one: no labels,
-    no diagrams, landscape-friendly."""
+    no diagrams, landscape-friendly. If all of them are unusable, the next `top`, and so on."""
+    for i in range(0, len(paths), top):
+        best = _striking(paths[i:i + top])
+        if best:
+            return best
+    return None
+
+
+def choose(ep, paths: list[Path]) -> Path | None:
+    """striking(), except that a first thumb_query naming one NASA image (`n: PIA19857`) pins it, as long as it
+    passes the same checks."""
+    m = re.fullmatch(r"(?:[a-z]:\s*)?(PIA\d{5})", ep.thumb_queries[0].strip()) if ep.thumb_queries else None
+    if m:
+        pinned = [p for p in paths if p.stem == f"nasa_{m.group(1)}"]
+        if pinned and _striking(pinned):
+            return pinned[0]
+    return striking(paths)
+
+
+def _striking(paths: list[Path]) -> Path | None:
     best, best_s = None, -1e9
-    for rank_i, p in enumerate(paths[:top]):
+    for rank_i, p in enumerate(paths):
         img = cv2.imread(str(p), cv2.IMREAD_REDUCED_COLOR_4)
         if img is None:
             continue
@@ -36,7 +55,11 @@ def striking(paths: list[Path], top: int = 5) -> Path | None:
         if w < 320 or h < 180:
             continue
         big = cv2.imread(str(p), cv2.IMREAD_REDUCED_COLOR_2)
-        if vision.text_score(big) > 0.004:                      # even small labels ruin a thumbnail
+        if vision.text_score(big) > 0.004 or vision.annotated(big):   # even small labels or boxes ruin a thumbnail
+            continue
+        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+        lit = hsv[..., 2] > 60
+        if lit.mean() > 0.01 and np.median(hsv[..., 1][lit]) < 10:      # black-and-white frames look dead in the feed
             continue
         s = vision.beauty(img) - 0.09 * rank_i + (0.05 if w >= h else -0.1)
         if s > best_s:
@@ -116,19 +139,26 @@ def _frame(image: Path, style: str) -> tuple[np.ndarray, tuple[float, float]]:
     if src is None:
         raise ValueError(f"cannot read {image}")
     h, w = src.shape[:2]
-    scale = max(TW / w, TH / h) * 1.05
+    base = max(TW / w, TH / h) * 1.05
+    scale = base
     g = cv2.GaussianBlur(cv2.cvtColor(cv2.resize(src, (320, max(1, int(320 * h / w)))), cv2.COLOR_BGR2GRAY), (0, 0), 4)
     ys, xs = np.where(g > max(40, np.percentile(g, 96)))
     if len(xs) > 20:
         bw = (np.percentile(xs, 95) - np.percentile(xs, 5) + 1) / 320 * w * scale
         if bw < TW * 0.40:
             scale *= min(2.2, (TW * 0.52) / max(bw, 1))
-    src = cv2.resize(src, (int(w * scale) + 2, int(h * scale) + 2), interpolation=cv2.INTER_AREA)
-    fx, fy = _focus(src)
     tx, ty = {"cinematic": (0.5, 0.40), "impact": (0.68, 0.5)}.get(style, (0.5, 0.60))   # room for the words
-    x0 = int(min(max(fx - TW * tx, 0), src.shape[1] - TW))
-    y0 = int(min(max(fy - TH * ty, 0), src.shape[0] - TH))
-    return src[y0:y0 + TH, x0:x0 + TW].astype(np.float32) / 255, (fx - x0, fy - y0)
+    best = None
+    for s in ((scale, base) if scale > base else (base,)):   # zoomed-in subject vs whole scene: keep the more striking
+        big = cv2.resize(src, (int(w * s) + 2, int(h * s) + 2), interpolation=cv2.INTER_AREA)
+        fx, fy = _focus(big)
+        x0 = int(min(max(fx - TW * tx, 0), big.shape[1] - TW))
+        y0 = int(min(max(fy - TH * ty, 0), big.shape[0] - TH))
+        crop = big[y0:y0 + TH, x0:x0 + TW]
+        b = vision.beauty(crop) + (0.1 if s > base else 0)     # close and big wins unless the zoom is a washed-out glare
+        if best is None or b > best[0]:
+            best = (b, crop, (fx - x0, fy - y0))
+    return best[1].astype(np.float32) / 255, best[2]
 
 
 def _circle(img: Image.Image, cx: float, cy: float, r: float) -> Image.Image:
@@ -193,11 +223,13 @@ def make(image: Path, text: str, out: Path, badge: str = "", style: str = "cinem
     else:
         size = 118
         track_k = 0.22
-        while size > 60:
+        while size > 56:
             f = _font("Montserrat-SemiBold.ttf", size)
             if _tracked_width(d0, _plain(main), f, size * track_k) <= TW * 0.86:
                 break
             size -= 3
+            if size < 84:                                            # long titles: tighter spacing before tiny type
+                track_k = 0.12
         f = _font("Montserrat-SemiBold.ttf", size)
         y = int(TH * 0.66) - size // 2
         tr = size * track_k
@@ -263,7 +295,7 @@ def remember(ep_key: str, image: Path) -> None:
 def pick(ep, cache: Path) -> Path | None:
     from .edit import Footage
     taken = {name for key, name in _used().items() if key != ep.key}
-    best = striking([p for p in candidates(ep, Footage(cache, 1)) if p.name not in taken])
+    best = choose(ep, [p for p in candidates(ep, Footage(cache, 1)) if p.name not in taken])
     if best:
         remember(ep.key, best)
     return best
