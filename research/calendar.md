@@ -111,7 +111,7 @@ Format per line: `number | file key | working title | angle`
 128 | callisto | The Most Cratered World Has a Secret | Callisto
 129 | missing-baryons | Half the Ordinary Matter Was Missing | the hunt and the 2020 and 2025 finds
 130 | what-if-neutron-star | What If You Stood on a Neutron Star? | gravity, light, the end
-131 | parker-solar-probe | The Spacecraft That Touched the Sun | Parker Solar Probe
+131 | sungrazing-comets | The Comets That Dive Into the Sun | SOHO's 5,000 comets, the Kreutz family, Ikeya-Seki, Lovejoy, ISON
 132 | odd-radio-circles | Giant Rings in Space No One Can Explain | odd radio circles
 133 | kepler-16b | A Real Planet With Two Suns | Kepler-16b and circumbinary worlds
 134 | before-big-bang | What Happened Before the Big Bang? | the honest answers
