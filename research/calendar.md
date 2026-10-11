@@ -42,7 +42,7 @@ Format per line: `number | file key | working title | angle`
 061 | sun-death | What Will Happen When the Sun Dies | red giant, does Earth survive, white dwarf
 062 | 55-cancri-e | The Planet Covered in Lava Oceans | 55 Cancri e, the diamond idea and what Webb found
 063 | big-bang-first-seconds | The First Three Minutes of Everything | from the hot dense state to the first atoms
-064 | strange-moons | The Strangest Moons in the Solar System | Iapetus, Miranda, Hyperion, Mimas, Phobos
+064 | strange-moons | The Weirdest Moons You've Never Heard Of | Pan, Methone, Janus and Epimetheus, Daphnis, Phoebe, Nereid, Charon, Dactyl
 065 | time-dilation | Why Time Runs Slower Near a Black Hole | GPS, Miller's planet, what is real
 066 | dyson-spheres | Are Aliens Building Megastructures Around Stars? | Dyson spheres and the 2024 candidates
 067 | chicxulub | The Day the Sky Fell | the asteroid that ended the dinosaurs, minute by minute
