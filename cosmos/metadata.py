@@ -28,6 +28,11 @@ def _credit_summary(credits: list[str]) -> list[str]:
     seen, out = set(), []
     for c in credits:
         c = re.sub(r"\s+", " ", c).strip()
+        # ESA/Webb clip credits name the clip's own soundtrack; we never use clip audio, so drop it
+        c = re.split(r"\s*\.?\s*Music(?: Credits)?\s*:", c)[0].strip(" ;,.")
+        c = re.sub(r"(?<=[^\s;,])\s*(Image Processing|Acknowledge?ment)\s*:", r"; \1:", c)
+        if not c:
+            continue
         if c.lower() in seen:
             continue
         seen.add(c.lower())
