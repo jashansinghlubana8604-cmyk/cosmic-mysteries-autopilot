@@ -34,7 +34,7 @@ mood: wonder
 The idea goes back more than two thousand years. The Greek philosopher Anaxagoras suggested that the seeds of life were scattered throughout the universe. The word panspermia means seeds everywhere.
 
 > i: physics laboratory | v: physics laboratory
-In 1903, the Swedish Nobel Prize-winning chemist Svante Arrhenius proposed that tiny spores could drift between planets, pushed along by the pressure of starlight. In the 1970s, the astronomers Fred Hoyle and Chandra Wickramasinghe argued that life might be common in comets.
+In 1903, the Swedish Nobel Prize-winning chemist Svante Arrhenius proposed that tiny spores could drift between planets, pushed along by the pressure of starlight. In the 1970s, the astronomers Fred Hoyle and Chandra Wickramasinghe argued that life might be common in comets. Hoyle even suggested that some epidemics on Earth could have been caused by germs falling from space. Most scientists rejected that idea, but the broader question, whether life's ingredients come from space, has only grown more important.
 
 > i: dna helix | v: dna helix
 Even Francis Crick, co-discoverer of the structure of DNA, explored a more radical version with Leslie Orgel in 1973, called directed panspermia. They speculated that an advanced civilisation might have deliberately seeded the Earth with life. [pause] He presented it as a provocative possibility, not as something he could prove.
@@ -64,6 +64,9 @@ They also found salts and minerals that form when salty water evaporates, sugges
 > i: ryugu | v: asteroid
 Japan's Hayabusa2 mission brought back samples from another asteroid, Ryugu, in 2020. In those, scientists also found amino acids and the nucleobase uracil. Asteroids, it seems, are natural chemistry labs, cooking up the ingredients of life all across the solar system.
 
+> i: comet | v: comet tail
+Comets carry similar chemistry. The European Space Agency's Rosetta mission, which orbited comet sixty seven P from 2014 to 2016, detected the amino acid glycine and phosphorus in the gas around the comet. [pause] Every kind of small body we look at seems to be carrying some of life's building blocks.
+
 ## Could Life Itself Travel?
 mood: mystery
 > i: mars meteorite | v: meteor
@@ -74,6 +77,9 @@ Some living things are astonishingly tough. Tardigrades, tiny animals less than 
 
 > i: international space station | v: international space station
 Inside a large rock, shielded from radiation, some microbes might survive the millions of years it could take to travel between planets, and even the fiery entry into a new atmosphere. [pause] It has never been shown to happen. But it may not be impossible.
+
+> i: meteor | v: meteor shower
+And the Earth is constantly receiving material from space. Tens of tonnes of dust and small meteorites fall onto our planet every day, much of it too small to notice. In the early solar system, when impacts were far more common, that delivery was enormous. [pause] Every young planet was being sprinkled with chemistry from the sky.
 
 > i: mars | v: mars rotation
 Some scientists have even wondered whether life could have started on Mars, which may have been habitable early on, and later travelled to Earth inside a meteorite. If that were true, we might all be Martians. [pause] It is speculation. But it is taken seriously enough to be studied.
