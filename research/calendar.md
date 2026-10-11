@@ -148,7 +148,7 @@ Format per line: `number | file key | working title | angle`
 163 | moon-ice | There Is Ice Hiding on the Moon | permanently shadowed craters
 164 | einstein-rings | Space Bends Light Into Rings | gravitational lensing, Einstein rings and crosses
 165 | kardashev | How Advanced Could a Civilisation Get? | the Kardashev scale
-166 | saturn-rings-vanish | Saturn's Rings Are Disappearing | ring plane crossing, ring rain
+166 | lightning-other-worlds | Lightning on Other Worlds | Jupiter's shallow lightning, Saturn's superstorms, the debate over Venus
 167 | thorne-zytkow | A Star Hiding Another Star Inside | Thorne-Zytkow objects
 168 | dragonfly-titan | A Drone Is Going to Fly on Titan | Dragonfly
 169 | strangest-galaxies | The Strangest Galaxies Ever Seen | Hoag's object, the Cartwheel, DF2
