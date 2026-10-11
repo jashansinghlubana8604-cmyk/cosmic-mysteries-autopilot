@@ -16,8 +16,8 @@ Format per line: `number | file key | working title | angle`
 035 | what-if-sun-vanished | What If the Sun Suddenly Disappeared? | 8 minutes of ignorance, the freeze, who survives
 036 | scariest-planets | The Most Terrifying Planets Ever Discovered | glass rain, iron rain, lava oceans, the darkest world
 037 | neutron-stars | A Teaspoon of This Star Weighs a Billion Tonnes | neutron stars from collapse to crust mountains
-038 | sounds-of-space | The Real Sounds Recorded in Space | Voyager's hum, Saturn's radio, Juno at Ganymede, black-hole sonifications
-039 | sagittarius-a | The Monster at the Centre of Our Galaxy | S2's orbit, the 2022 image, the flares, why it is quiet
+038 | biggest-black-holes | The Biggest Black Holes Ever Found | ranked, from Sagittarius A* to the ultramassive giants
+039 | arecibo-message | We Sent a Message to the Stars | Arecibo 1974, and should we have?
 040 | io | The Most Violent World in the Solar System | 400 volcanoes, lava lakes, tidal heating
 041 | neptune | Neptune Is Not What You Think | supersonic winds, the dark spots, diamond rain, a moon going backwards
 042 | apophis | The Asteroid That Will Pass Closer Than Our Satellites | April 13, 2029
@@ -77,7 +77,7 @@ Format per line: `number | file key | working title | angle`
 094 | kessler-syndrome | The Cloud of Junk That Could Trap Us on Earth | Kessler syndrome
 095 | cygnus-x1 | The First Black Hole Ever Found | Cygnus X-1, Hawking's bet
 096 | ceres | The Strange Bright Spots on Ceres | Dawn, salt, a buried ocean
-097 | arecibo-message | We Sent a Message to the Stars | Arecibo 1974, and should we have?
+097 | sagittarius-a | The Monster at the Centre of Our Galaxy | S2's orbit, the 2022 image, the flares, why it is quiet
 098 | pillars-of-creation | The Pillars of Creation | Hubble vs Webb, being eroded by starlight
 099 | every-way-earth-could-end | Every Way Earth Could End | from the likely to the cosmic
 100 | hawking-radiation | Black Holes Are Not Forever | Hawking radiation, evaporation
@@ -173,7 +173,7 @@ Format per line: `number | file key | working title | angle`
 188 | lunar-swirls | The Strange Swirls on the Moon | Reiner Gamma
 189 | star-that-died-twice | The Star That Exploded and Came Back | iPTF14hls
 190 | habitable-moons | Could Life Live on a Moon? | exomoons
-191 | biggest-black-holes | The Biggest Black Holes Ever Found | ranked
+191 | nearest-stars | The Closest Stars to Earth and What Orbits Them | Alpha Centauri, Barnard's star, Wolf 359, Sirius
 192 | tardigrades | The Animal That Survived Open Space | tardigrades
 193 | kepler-mission | The Telescope That Found Thousands of Worlds | Kepler's story
 194 | what-if-moon-closer | What If the Moon Were Twice as Close? | tides, eclipses
