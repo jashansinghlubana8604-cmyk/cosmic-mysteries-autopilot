@@ -33,9 +33,9 @@ from .voice import Spoken, synthesize
 log = logging.getLogger("cosmos.edit")
 
 COLD_LEAD = 1.0
-GAP_SENT = 0.30        # breath between sentences
-GAP_PAUSE = 1.1        # [pause] in the script
-GAP_PARA = 0.75        # between paragraphs: the picture breathes, the music swells
+GAP_SENT = 0.45        # breath between sentences
+GAP_PAUSE = 1.5        # [pause] in the script: let the line land
+GAP_PARA = 1.1         # between paragraphs: the picture breathes, the music swells
 TITLE_WARP = 3.2       # drift through the stars
 TITLE_HOLD = 3.6
 CARD_LEN = 3.4
@@ -170,7 +170,7 @@ class Footage:
         cf = self.cache / "vision" / (re.sub(r"[^\w\-]", "_", a.key) + ".json")
         if cf.exists():
             d = json.loads(cf.read_text())
-            if "beauty" in d and "bright" in d:
+            if "beauty" in d and "bright" in d and d.get("v") == 2:
                 self._beauty[a.key] = d["beauty"]
                 self._bright[a.key] = d["bright"]
                 return d["ok"]
@@ -189,7 +189,7 @@ class Footage:
         self._beauty[a.key] = beauty
         self._bright[a.key] = bright
         cf.parent.mkdir(parents=True, exist_ok=True)
-        cf.write_text(json.dumps({"ok": ok, "why": why, "beauty": beauty, "bright": bright}))
+        cf.write_text(json.dumps({"ok": ok, "why": why, "beauty": beauty, "bright": bright, "v": 2}))
         if not ok:
             log.info("rejected %s (%s): %s", a.key, why, a.title[:60])
         return ok
@@ -232,8 +232,23 @@ class Footage:
             log.info("invalid media %s: %s", a.key, e)
             return None
 
+    def _frame_at(self, path: Path, t: float) -> np.ndarray | None:
+        raw = subprocess.run([FFMPEG, "-v", "error", "-ss", f"{t:.2f}", "-i", str(path), "-frames:v", "1",
+                              "-vf", "scale=960:-2", "-f", "image2pipe", "-vcodec", "png", "-"], capture_output=True).stdout
+        return cv2.imdecode(np.frombuffer(raw, np.uint8), cv2.IMREAD_COLOR) if raw else None
+
+    def _clean_scenes(self, path: Path, scenes: list[tuple[float, float]]) -> list[tuple[float, float]]:
+        """Drop every scene that shows writing anywhere in it (start, middle, end): subtitles, captions, logo end
+        cards with web addresses. A clip that is mostly captioned is dropped whole."""
+        keep = []
+        for s0, s1 in scenes:
+            frames = [self._frame_at(path, t) for t in (s0 + 0.3, (s0 + s1) / 2, s1 - 0.3)]
+            if not any(f is not None and vision.has_text(f) for f in frames):
+                keep.append((s0, s1))
+        return keep if len(keep) * 2 >= len(scenes) else []
+
     def _scenes(self, a: sources.Asset, path: Path, info: dict) -> list[tuple[float, float]]:
-        cf = self.cache / "scenes" / (re.sub(r"[^\w\-]", "_", a.key) + ".json")
+        cf = self.cache / "scenes" / (re.sub(r"[^\w\-]", "_", a.key) + ".v2.json")
         if cf.exists():
             return [tuple(x) for x in json.loads(cf.read_text())]
         dur = info["duration"]
@@ -265,6 +280,7 @@ class Footage:
             if seg and float(np.median(seg)) < 4:        # black / fade sections
                 continue
             scenes.append((round(x, 2), round(y, 2)))
+        scenes = self._clean_scenes(path, scenes)
         cf.parent.mkdir(parents=True, exist_ok=True)
         cf.write_text(json.dumps(scenes))
         return scenes
@@ -556,8 +572,8 @@ def produce(ep: Episode, cfg: dict, work: Path, cache: Path, *, seed: int, chann
                     s += 0.3
                 if m.bright < 22:
                     s -= 0.6 if m.bright < 16 else 0.3
-                if early and m.kind == "video":
-                    s += 0.25
+                if m.kind == "video":            # real motion beats a still everywhere; in the opening by far
+                    s += 0.75 if early else 0.4
                 if EARTHLY.search(c.title) and not wants_ground:
                     s -= 0.5
                 if m.kind == "video" and re.search(r"zoom|pan|fly|flight|journey|travel|tour|3d|rotat", c.title, re.I):
@@ -732,9 +748,7 @@ def produce(ep: Episode, cfg: dict, work: Path, cache: Path, *, seed: int, chann
                     if len(stills) < 60:
                         stills.append(m.path)
                 cr = m.asset.credit
-            add_shot(sh, s0, cr)
-            if cr:
-                ov.add(s0 + 1.2, min(s1 - 0.5, s0 + 5.5), "Credit", rf"{{\fad(800,800)}}{_esc(cr)}", 2)
+            add_shot(sh, s0, cr)          # credits go in the description only: no text on the picture
             timeline_frames += nf
 
     # 4) on-screen text, spotlight dims, soft hits -----------------------------------------------------------

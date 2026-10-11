@@ -2,7 +2,7 @@
 
 - Cinematic effects are synthesized (deterministic from a seed): sub booms, risers, whooshes, braams, shimmers,
   text ticks and a low drone bed for cold opens. No sample packs needed.
-- Music: Kevin MacLeod tracks (CC BY 4.0, credited automatically), chosen per section mood, crossfaded,
+- Music: Scott Buckley's cinematic space scores (CC BY 4.0, credited automatically), chosen per section mood, crossfaded,
   ducked under the narrator and swelling in the gaps.
 - Master: stereo, -14 LUFS integrated (YouTube's reference), -1.5 dBTP.
 """
@@ -268,7 +268,8 @@ def credit_line(track: str) -> str:
     c = music_credits().get(track)
     if not c:
         return ""
-    return f'"{c["title"]}" Kevin MacLeod (incompetech.com), licensed under Creative Commons: By Attribution 4.0'
+    site = c.get("source", "").replace("https://", "").replace("http://", "").strip("/")
+    return f'"{c["title"]}" by {c["artist"]} ({site}), licensed under Creative Commons: By Attribution 4.0'
 
 
 def _tracks_for(mood: str) -> list[Path]:

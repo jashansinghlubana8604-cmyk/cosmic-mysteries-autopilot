@@ -5,8 +5,8 @@ channel:
 
 voice:
   edge_voice: en-US-AndrewMultilingualNeural
-  rate: "-2%"
-  pitch: "-2Hz"
+  rate: "-10%"                 # slow, unhurried delivery: room for awe
+  pitch: "-4Hz"
 
 music:
   level_db: 1.5                # music bed level when the narrator is silent (relative)

@@ -186,14 +186,27 @@ def beauty(img: np.ndarray) -> float:
     return float(max(0.0, min(1.0, s)))
 
 
+def has_text(img: np.ndarray) -> str:
+    """Any writing on screen: captions, subtitles, logos with web addresses, dates, labels, inset boxes."""
+    t = text_score(img)
+    if t > 0.035:
+        return f"text {t:.3f}"
+    gray = _gray960(img)
+    if plain_labels(gray) >= 1:
+        return "label"
+    if box_corners(gray) >= 2:
+        return "boxes"
+    return ""
+
+
 def verdict(img: np.ndarray) -> tuple[bool, str]:
     lp = layout_problem(img)
     if lp:
         return False, lp
-    t = text_score(img)
-    if t > 0.04:
-        return False, f"text {t:.3f}"
+    t = has_text(img)
+    if t:
+        return False, t
     p = people_score(img)
     if p > 0.04:
         return False, f"people {p:.3f}"
-    return True, f"ok t={t:.3f} p={p:.3f}"
+    return True, f"ok p={p:.3f}"
