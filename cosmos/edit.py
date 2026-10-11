@@ -266,8 +266,9 @@ class Footage:
         keep = [(s0, s1) for s0, s1 in scenes if not any(s0 - 1.0 <= t <= s1 + 1.0 for t in bad)]
         return keep if len(keep) * 2 >= len(scenes) else []
 
-    def _scenes(self, a: sources.Asset, path: Path, info: dict) -> list[tuple[float, float]]:
-        cf = self.cache / "scenes" / (re.sub(r"[^\w\-]", "_", a.key) + ".v5.json")
+    def _raw_scenes(self, a: sources.Asset, path: Path, info: dict) -> list[tuple[float, float]]:
+        """Shots between hard cuts, skipping the first and last few percent and black sections (cached)."""
+        cf = self.cache / "scenes" / (re.sub(r"[^\w\-]", "_", a.key) + ".json")
         if cf.exists():
             return [tuple(x) for x in json.loads(cf.read_text())]
         dur = info["duration"]
@@ -275,10 +276,7 @@ class Footage:
         hi = dur - max(2.5, dur * 0.12)
         if dur < 8:
             lo, hi = 0.4, dur - 0.6
-        if "zoom" in a.title.lower() and dur >= 20:
-            lo = max(lo, dur * 0.45)    # zoom videos open on labelled constellation maps: keep only the close-up
         diffs, prev, means = [], None, []
-        step = 2
         for f in iter_frames(path, 64, 36, gray=True, duration=min(dur, 240), vf_prefix="fps=12.5,"):
             f = f.astype(np.int16)
             diffs.append(0.0 if prev is None else float(np.mean(np.abs(f - prev))))
@@ -301,6 +299,20 @@ class Footage:
             if seg and float(np.median(seg)) < 4:        # black / fade sections
                 continue
             scenes.append((round(x, 2), round(y, 2)))
+        cf.parent.mkdir(parents=True, exist_ok=True)
+        cf.write_text(json.dumps(scenes))
+        return scenes
+
+    def _scenes(self, a: sources.Asset, path: Path, info: dict) -> list[tuple[float, float]]:
+        """Usable shots: raw shots, minus the labelled opening of zoom videos, minus any shot with writing in it."""
+        cf = self.cache / "scenes" / (re.sub(r"[^\w\-]", "_", a.key) + ".v5.json")
+        if cf.exists():
+            return [tuple(x) for x in json.loads(cf.read_text())]
+        scenes = self._raw_scenes(a, path, info)
+        dur = info["duration"]
+        if "zoom" in (a.title or "").lower() and dur >= 20:
+            lo = dur * 0.45             # zoom videos open on labelled constellation maps: keep only the close-up
+            scenes = [(max(x, lo), y) for x, y in scenes if y - max(x, lo) >= 1.6]
         scenes = self._clean_scenes(path, scenes, info)
         cf.parent.mkdir(parents=True, exist_ok=True)
         cf.write_text(json.dumps(scenes))
