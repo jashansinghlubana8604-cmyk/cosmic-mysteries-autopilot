@@ -227,7 +227,7 @@ Format per line: `number | file key | working title | angle`
 240 | mars-moons-origin | Where Did Mars Get Its Moons? | captured asteroids or a giant impact
 241 | magnetar-giant-flare | The Flash That Lit Up Earth's Atmosphere | SGR 1806-20, 2004
 242 | strangest-stars | The Strangest Stars Ever Found | Przybylski, VFTS 352, Boyajian's cousins
-243 | what-if-no-moon | What If Earth Never Had a Moon? | a wobbling, fast-spinning world
+243 | what-if-asteroid-belt-planet | What If the Asteroid Belt Had Become a Planet? | Jupiter's interference, how small it would be, a fifth rocky world
 244 | wasp-12b | The Planet Being Eaten by Its Star | WASP-12b
 245 | biggest-galaxy | The Biggest Galaxy Ever Found | IC 1101, Alcyoneus
 246 | apollo-12-surveyor | The Camera That Waited on the Moon | Surveyor 3 and Apollo 12
