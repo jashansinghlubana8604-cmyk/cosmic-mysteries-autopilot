@@ -237,7 +237,15 @@ def validate(ep: Episode) -> list[str]:
 
 
 def load_all() -> list[Episode]:
-    return [parse(p) for p in sorted(EPISODES_DIR.glob("[0-9]*.md"))]
+    """Every valid episode, in posting order. A broken script is skipped with a warning, never fatal."""
+    out = []
+    for p in sorted(EPISODES_DIR.glob("[0-9]*.md")):
+        try:
+            out.append(parse(p))
+        except ScriptError as e:
+            import logging
+            logging.getLogger("cosmos.script").warning("skipping %s", e)
+    return out
 
 
 if __name__ == "__main__":

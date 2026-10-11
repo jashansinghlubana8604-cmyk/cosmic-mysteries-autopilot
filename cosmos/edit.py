@@ -43,7 +43,11 @@ CARD_VOICE_AT = 2.7
 END_CARD = 12.0
 # majestic fallbacks: used when a paragraph's own searches are thin, and mixed in where they are more beautiful
 GENERIC = ["v: zoom nebula", "v: pan nebula", "v: flight through galaxy", "v: zoom galaxy", "i: nebula",
-           "i: spiral galaxy", "i: star forming region", "v: milky way time-lapse", "i: pillars", "v: fly through"]
+           "i: spiral galaxy", "i: star forming region", "v: milky way time-lapse", "i: pillars", "v: fly through",
+           # moving footage first: a deep pool of real space video every paragraph can fall back on
+           "v: zoom", "v: fly-through", "v: 3d visualisation", "v: pan", "v: artist's animation",
+           "v: deep space", "v: star cluster", "v: galaxy cluster", "v: webb zoom", "v: hubble zoom",
+           "v: supernova animation", "v: black hole animation", "v: exoplanet animation", "v: planet animation"]
 EARTHLY = re.compile(r"observator|\bdome|\bsite\b|telescope|antenna|instrument|mirror|camera|laborator|"
                      r"platform|building|\broad\b|rocket|launch|satellite|spacecraft|construction|control room|"
                      r"aerial|paranal|la silla|armazones|\balma\b|\bvlt\b|\belt\b|\bcta\b|\bvista\b|hotel|"
@@ -529,6 +533,7 @@ def produce(ep: Episode, cfg: dict, work: Path, cache: Path, *, seed: int, chann
     fx.search_all([q for s in ep.sections for p in s.paragraphs for q in p.queries]
                   + fallback + ep.thumb_queries + GENERIC)
     awe = fx.candidates(GENERIC, per=12)            # the beautiful pool every paragraph may draw on
+    awe.sort(key=lambda c: c.kind != "video")       # videos first, so they are the ones downloaded
     plans = []
     for a, b, data in slots:
         if not isinstance(data, tuple):
@@ -543,7 +548,7 @@ def produce(ep: Episode, cfg: dict, work: Path, cache: Path, *, seed: int, chann
     want: list[sources.Asset] = []
     for a, b, data, n, cands, _q in plans:
         want += cands[: n + 3]
-    want += fx.candidates(fallback + ep.thumb_queries, per=6) + awe[:40]
+    want += fx.candidates(fallback + ep.thumb_queries, per=6) + awe[:90]
     seen = set()
     want = [x for x in want if not (x.key in seen or seen.add(x.key))]
     log_fn(f"footage: downloading {len(want)} candidates")
@@ -573,7 +578,7 @@ def produce(ep: Episode, cfg: dict, work: Path, cache: Path, *, seed: int, chann
                 if m.bright < 22:
                     s -= 0.6 if m.bright < 16 else 0.3
                 if m.kind == "video":            # real motion beats a still everywhere; in the opening by far
-                    s += 0.75 if early else 0.4
+                    s += 1.1 if early else 0.8
                 if EARTHLY.search(c.title) and not wants_ground:
                     s -= 0.5
                 if m.kind == "video" and re.search(r"zoom|pan|fly|flight|journey|travel|tour|3d|rotat", c.title, re.I):
@@ -590,7 +595,7 @@ def produce(ep: Episode, cfg: dict, work: Path, cache: Path, *, seed: int, chann
                 last = used_at.get(c.key)
                 if fresh and last is not None:
                     continue
-                if not fresh and last is not None and at - last < (60 if m.kind == "video" else 150):
+                if not fresh and last is not None and at - last < (35 if m.kind == "video" else 150):
                     continue
                 ground = bool(EARTHLY.search(c.title))
                 if para_key is not None and ground and earthly_in_para.get(para_key, 0) >= 1:
