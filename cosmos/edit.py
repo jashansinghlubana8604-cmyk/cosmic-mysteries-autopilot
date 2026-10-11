@@ -242,17 +242,18 @@ class Footage:
         return cv2.imdecode(np.frombuffer(raw, np.uint8), cv2.IMREAD_COLOR) if raw else None
 
     def _clean_scenes(self, path: Path, scenes: list[tuple[float, float]]) -> list[tuple[float, float]]:
-        """Drop every scene that shows writing anywhere in it (start, middle, end): subtitles, captions, logo end
-        cards with web addresses. A clip that is mostly captioned is dropped whole."""
+        """Drop every scene that shows writing anywhere in it (sampled every 2.5 s): subtitles, captions, labels
+        that fade in mid-scene, logo end cards with web addresses. A clip that is mostly captioned is dropped whole."""
         keep = []
         for s0, s1 in scenes:
-            frames = [self._frame_at(path, t) for t in (s0 + 0.3, (s0 + s1) / 2, s1 - 0.3)]
+            n = max(3, min(12, int((s1 - s0) / 2.5) + 1))
+            frames = [self._frame_at(path, s0 + 0.3 + (s1 - s0 - 0.6) * k / (n - 1)) for k in range(n)]
             if not any(f is not None and vision.has_text(f) for f in frames):
                 keep.append((s0, s1))
         return keep if len(keep) * 2 >= len(scenes) else []
 
     def _scenes(self, a: sources.Asset, path: Path, info: dict) -> list[tuple[float, float]]:
-        cf = self.cache / "scenes" / (re.sub(r"[^\w\-]", "_", a.key) + ".v2.json")
+        cf = self.cache / "scenes" / (re.sub(r"[^\w\-]", "_", a.key) + ".v4.json")
         if cf.exists():
             return [tuple(x) for x in json.loads(cf.read_text())]
         dur = info["duration"]
@@ -260,6 +261,8 @@ class Footage:
         hi = dur - max(2.5, dur * 0.12)
         if dur < 8:
             lo, hi = 0.4, dur - 0.6
+        if re.search(r"zoom", a.title, re.I) and dur >= 20:
+            lo = max(lo, dur * 0.45)    # zoom videos open on labelled constellation maps: keep only the close-up
         diffs, prev, means = [], None, []
         step = 2
         for f in iter_frames(path, 64, 36, gray=True, duration=min(dur, 240), vf_prefix="fps=12.5,"):
