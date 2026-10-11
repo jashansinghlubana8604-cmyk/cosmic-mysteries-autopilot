@@ -36,6 +36,9 @@ TrES-2b was discovered in 2006 by the Trans-Atlantic Exoplanet Survey, a network
 > i: hot jupiter | v: hot jupiter
 It turned out to be a {{hot Jupiter|HOT JUPITER}}. A gas giant a little larger and heavier than Jupiter, but orbiting incredibly close to its star, only about five million kilometres away. One year on TrES-2b lasts just two and a half Earth days.
 
+> i: night sky | v: night sky
+Its star is too faint to see with the naked eye, but a decent backyard telescope can pick it out among the stars of Draco, the dragon, which coils around the northern sky between the Plough and the Little Bear. [pause] Somewhere next to that faint point of light, a black giant is racing around it.
+
 > i: star | v: star
 Its star is similar to our Sun. At that tiny distance, it fills an enormous part of the planet's sky, and heats its atmosphere to more than a thousand degrees. Like most hot Jupiters, TrES-2b is probably tidally locked, with one side facing its star forever.
 
@@ -49,6 +52,9 @@ As TrES-2b orbits, we see different amounts of its day side, just as we see the 
 
 > i: kepler telescope | v: kepler
 In 2011, astronomers David Kipping and David Spiegel searched for those changes in more than fifty orbits of Kepler data. The variation they found was astonishingly small, about six parts in a million. [pause] Kepler could detect it only because it was so stable and watched for so long.
+
+> i: kepler telescope | v: kepler
+To put that in perspective, it is like noticing a moth fluttering near a stadium floodlight from many kilometres away, and then working out the colour of the moth's wings. [pause] Kepler was built to find Earth-sized planets. It turned out to be sensitive enough to measure the darkness of a distant world.
 
 > i: dark planet | v: dark planet
 From that tiny signal, they worked out how much light the planet reflects. The answer was {{less than one percent|< 1% REFLECTED}}. Jupiter reflects about a third of the sunlight that hits it. The Earth reflects about thirty percent. Even our Moon, which looks bright in the night sky, reflects about twelve percent. Fresh asphalt reflects around five.
@@ -67,6 +73,9 @@ And its atmosphere seems to be full of substances that absorb light very efficie
 > i: tres-2b | v: hot jupiter
 Together, they act like an enormous light trap. Starlight goes in and does not come out. It is converted into heat, which the planet then radiates away as a dull infrared and red glow. [pause] Even so, the scientists admitted they could not fully explain why it is quite this dark.
 
+> i: dark planet | v: dark planet
+If you painted a ball with the blackest ordinary paint you could buy, it would still reflect a few percent of the light that hits it. TrES-2b does better than that. [pause] Nature has made a planet darker than most black things humans have ever manufactured.
+
 ## The Dark Family
 mood: dread
 > i: wasp-12b | v: hot jupiter
@@ -77,6 +86,9 @@ In 2018, astronomers reported another, WASP-104b, which they described as darker
 
 > i: hot jupiter | v: hot jupiter
 It turns out that the most common colour for a scorching giant planet may not be the bright banded beige of Jupiter, or the blue of Neptune. [pause] It may be the black of a burned-out furnace.
+
+> i: webb telescope | v: webb telescope
+The James Webb Space Telescope can now study the atmospheres of planets like these in far greater detail, measuring which molecules are present and how heat moves around them. [pause] Each one helps explain why some giant worlds shine and others vanish into darkness.
 
 ## A Hole In The Sky
 mood: wonder
