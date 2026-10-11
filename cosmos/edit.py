@@ -241,19 +241,33 @@ class Footage:
                               "-vf", "scale=960:-2", "-f", "image2pipe", "-vcodec", "png", "-"], capture_output=True).stdout
         return cv2.imdecode(np.frombuffer(raw, np.uint8), cv2.IMREAD_COLOR) if raw else None
 
-    def _clean_scenes(self, path: Path, scenes: list[tuple[float, float]]) -> list[tuple[float, float]]:
-        """Drop every scene that shows writing anywhere in it (sampled every 2.5 s): subtitles, captions, labels
-        that fade in mid-scene, logo end cards with web addresses. A clip that is mostly captioned is dropped whole."""
-        keep = []
-        for s0, s1 in scenes:
-            n = max(3, min(12, int((s1 - s0) / 2.5) + 1))
-            frames = [self._frame_at(path, s0 + 0.3 + (s1 - s0 - 0.6) * k / (n - 1)) for k in range(n)]
-            if not any(f is not None and vision.has_text(f) for f in frames):
-                keep.append((s0, s1))
+    def _scan(self, path: Path, info: dict, lo: float, hi: float, every: float = 2.5) -> list[tuple[float, np.ndarray]]:
+        """(time, frame) about every `every` seconds between lo and hi, in one fast pass that decodes keyframes only."""
+        w = 960
+        h = max(2, int(round(w * info["height"] / max(1, info["width"]) / 2)) * 2)
+        cmd = [FFMPEG, "-v", "error", "-skip_frame", "nokey", "-ss", f"{lo:.2f}", "-i", str(path),
+               "-t", f"{max(0.1, hi - lo):.2f}", "-an", "-vf", f"fps={1 / every:.4f},scale={w}:{h}",
+               "-pix_fmt", "bgr24", "-f", "rawvideo", "-"]
+        raw = subprocess.run(cmd, capture_output=True).stdout
+        size = w * h * 3
+        return [(lo + k * every, np.frombuffer(raw[k * size:(k + 1) * size], np.uint8).reshape(h, w, 3))
+                for k in range(len(raw) // size)]
+
+    def _clean_scenes(self, path: Path, scenes: list[tuple[float, float]], info: dict) -> list[tuple[float, float]]:
+        """Drop every scene that shows writing anywhere in it (checked about every 2.5 s): subtitles, captions,
+        labels that fade in mid-scene, logo end cards with web addresses. A mostly captioned clip is dropped whole."""
+        if not scenes:
+            return []
+        frames = self._scan(path, info, scenes[0][0], scenes[-1][1])
+        if not frames:          # keyframe pass failed: fall back to three seeks per scene
+            frames = [(t, f) for s0, s1 in scenes for t in (s0 + 0.3, (s0 + s1) / 2, s1 - 0.3)
+                      for f in [self._frame_at(path, t)] if f is not None]
+        bad = [t for t, f in frames if vision.has_text(f)]
+        keep = [(s0, s1) for s0, s1 in scenes if not any(s0 - 1.0 <= t <= s1 + 1.0 for t in bad)]
         return keep if len(keep) * 2 >= len(scenes) else []
 
     def _scenes(self, a: sources.Asset, path: Path, info: dict) -> list[tuple[float, float]]:
-        cf = self.cache / "scenes" / (re.sub(r"[^\w\-]", "_", a.key) + ".v4.json")
+        cf = self.cache / "scenes" / (re.sub(r"[^\w\-]", "_", a.key) + ".v5.json")
         if cf.exists():
             return [tuple(x) for x in json.loads(cf.read_text())]
         dur = info["duration"]
@@ -261,7 +275,7 @@ class Footage:
         hi = dur - max(2.5, dur * 0.12)
         if dur < 8:
             lo, hi = 0.4, dur - 0.6
-        if re.search(r"zoom", a.title, re.I) and dur >= 20:
+        if "zoom" in a.title.lower() and dur >= 20:
             lo = max(lo, dur * 0.45)    # zoom videos open on labelled constellation maps: keep only the close-up
         diffs, prev, means = [], None, []
         step = 2
@@ -287,7 +301,7 @@ class Footage:
             if seg and float(np.median(seg)) < 4:        # black / fade sections
                 continue
             scenes.append((round(x, 2), round(y, 2)))
-        scenes = self._clean_scenes(path, scenes)
+        scenes = self._clean_scenes(path, scenes, info)
         cf.parent.mkdir(parents=True, exist_ok=True)
         cf.write_text(json.dumps(scenes))
         return scenes
