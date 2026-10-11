@@ -29,6 +29,7 @@ from cosmos import script, writer  # noqa: E402
 from cosmos.youtube import AuthError, QuotaError, YouTube, key_tag  # noqa: E402
 
 STATE = ROOT / "state" / "posted.json"
+PENDING_THUMBS = ROOT / "state" / "thumbs"       # thumbnails YouTube refused (channel not verified yet): retried
 log = logging.getLogger("cosmos.pipeline")
 
 
@@ -49,6 +50,29 @@ def commit_state(msg: str) -> None:
         r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
         if r.returncode and cmd[1] not in ("commit",):
             log.warning("%s: %s", " ".join(cmd), r.stderr[-300:])
+
+
+def set_thumbnail(yt, st: dict, key: str, vid: str, image: Path) -> None:
+    """Set the thumbnail; if YouTube refuses (custom thumbnails not unlocked yet), keep the image in the repo and
+    let every later run retry it."""
+    if yt.set_thumbnail(vid, image):
+        st["episodes"][key]["thumb"] = True
+        return
+    PENDING_THUMBS.mkdir(parents=True, exist_ok=True)
+    keep = PENDING_THUMBS / f"{key}.jpg"
+    if image.resolve() != keep.resolve():
+        keep.write_bytes(image.read_bytes())
+    st["episodes"][key]["thumb"] = False
+
+
+def retry_thumbnails(yt, st: dict) -> None:
+    for key, e in st["episodes"].items():
+        img = PENDING_THUMBS / f"{key}.jpg"
+        if e.get("thumb") is False and img.exists() and e.get("video_id"):
+            if yt.set_thumbnail(e["video_id"], img):
+                e["thumb"] = True
+                img.unlink()
+                log.info("thumbnail set for %s on retry", key)
 
 
 def slot_time(sc: dict, day) -> tuple[int, int]:
@@ -112,6 +136,8 @@ def main() -> int:
                          or v["title"].strip().lower() == ep.title.strip().lower())
                 st["episodes"][ep.key] = {"video_id": v["id"], "publish_at": v["publishAt"] or v["published"],
                                           "title": v["title"], "recovered": True}
+        retry_thumbnails(yt, st)
+        save_state(st)
         taken = {(e.get("publish_at") or "")[:10] for e in st["episodes"].values()}
         for v in recent:
             when = v["publishAt"] or v["published"] or ""
@@ -175,12 +201,12 @@ def main() -> int:
             return 4
         st["episodes"][ep.key] = {"video_id": vid, "publish_at": slot.astimezone(ZoneInfo("UTC")).isoformat(),
                                   "title": meta["title"], "uploaded": datetime.now(ZoneInfo("UTC")).isoformat()}
-        save_state(st)
-        commit_state(f"scheduled {ep.key} for {slot.isoformat()} ({vid})")
         if meta.get("thumbnail"):
-            yt.set_thumbnail(vid, Path(meta["thumbnail"]))
+            set_thumbnail(yt, st, ep.key, vid, Path(meta["thumbnail"]))
         if meta.get("captions"):
             yt.add_captions(vid, Path(meta["captions"]))
+        save_state(st)
+        commit_state(f"scheduled {ep.key} for {slot.isoformat()} ({vid})")
         log.info("uploaded %s -> https://youtu.be/%s, publishes %s", ep.key, vid, slot.isoformat())
         made += 1
         for f in (Path(meta["video"]),):
