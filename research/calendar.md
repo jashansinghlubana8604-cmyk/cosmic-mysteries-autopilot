@@ -116,7 +116,7 @@ Format per line: `number | file key | working title | angle`
 133 | kepler-16b | A Real Planet With Two Suns | Kepler-16b and circumbinary worlds
 134 | before-big-bang | What Happened Before the Big Bang? | the honest answers
 135 | 2024-yr4 | The Asteroid That Could Hit the Moon | 2024 YR4, how impact odds work
-136 | cosmic-voids | The Universe Is Mostly Empty | voids and what lives in them
+136 | sirius-b | The Hidden Companion of the Brightest Star | Sirius B, the first white dwarf, Bessel's wobble, Clark's lens test, Einstein's redshift
 137 | lyra-vega | The Star That Will Be Our North Star | precession, Vega, Polaris
 138 | miranda | The Frankenstein Moon of Uranus | Miranda's cliffs
 139 | gw190521 | The Collision That Should Not Have Happened | GW190521, impossible black holes
