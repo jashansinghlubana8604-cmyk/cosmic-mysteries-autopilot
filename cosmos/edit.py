@@ -106,7 +106,7 @@ def _voice_all(ep: Episode, work: Path, vcfg: dict, next_teaser: str) -> list[Pi
 
     def one(j):
         return synthesize(j[0], j[1], vcfg, say)
-    with ThreadPoolExecutor(4) as ex:
+    with ThreadPoolExecutor(2) as ex:      # the new TTS host answers 429 to bigger bursts
         res = list(ex.map(one, jobs))
     for p, r in zip(pieces, res):
         p.spoken = r

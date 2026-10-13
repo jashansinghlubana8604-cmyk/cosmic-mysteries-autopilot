@@ -163,6 +163,7 @@ def main() -> int:
         log.warning("ONLY %d UNPOSTED EPISODES LEFT", len(remaining))
 
     from make import build  # noqa: E402  (heavy imports only when there is work)
+    from cosmos.voice import VoiceError  # noqa: E402
     made = 0
     for slot in todo:
         remaining = [e for e in episodes if e.key not in st["episodes"] and st["failed"].get(e.key, 0) < 2]
@@ -183,6 +184,9 @@ def main() -> int:
         try:
             meta = build(ep.path, cfg, ROOT / "out", channel, teaser,
                          log_fn=lambda m: log.info("[%s] %s", ep.key, m))
+        except VoiceError as e:     # the TTS service is down, not this episode: keep it, fail the run loudly
+            log.error("narration service unavailable, nothing can be made this run: %s", e)
+            return 5
         except Exception as e:  # noqa: BLE001 — skip a broken episode, never stop the channel
             log.exception("episode %s failed: %s", ep.key, e)
             st["failed"][ep.key] = st["failed"].get(ep.key, 0) + 1
@@ -212,7 +216,7 @@ def main() -> int:
         for f in (Path(meta["video"]),):
             f.unlink(missing_ok=True)
     log.info("done: %d episode(s) made", made)
-    return 0
+    return 6 if todo and not made else 0     # a red run makes GitHub email the owner
 
 
 if __name__ == "__main__":

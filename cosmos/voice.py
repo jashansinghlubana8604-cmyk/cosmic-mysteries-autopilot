@@ -20,6 +20,24 @@ SR = 48000
 if hasattr(asyncio, "WindowsSelectorEventLoopPolicy"):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())   # quiet proactor shutdown noise
 
+# Microsoft moved Read Aloud synthesis to a new host in Oct 2026; the old one now answers 403 region by region
+# (rany2/edge-tts#490). The new host rate-limits bursts (429). Use the new host, fall back to the old one on 403.
+_TOKEN = "6A5AA1D4EAFF4E9FB37E23D68491D6F4"
+HOSTS = [f"wss://api.msedgeservices.com/tts/cognitiveservices/websocket/v1?Ocp-Apim-Subscription-Key={_TOKEN}",
+         f"wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken={_TOKEN}"]
+_host = 0
+
+
+class VoiceError(RuntimeError):
+    """The TTS service is unreachable: every episode would fail the same way, so none should be blamed."""
+
+
+def _use_host(i: int) -> None:
+    global _host
+    from edge_tts import communicate
+    _host = i % len(HOSTS)
+    communicate.WSS_URL = HOSTS[_host]       # communicate imported the constant by name, so patch it there
+
 
 @dataclass
 class Spoken:
@@ -40,6 +58,7 @@ def _apply_say(text: str, say: dict[str, str]) -> str:
 
 async def _edge(text: str, voice: str, rate: str, pitch: str, mp3: Path) -> list[dict]:
     import edge_tts
+    _use_host(_host)
     comm = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch, boundary="WordBoundary")
     words = []
     with open(mp3, "wb") as f:
@@ -109,21 +128,24 @@ def synthesize(text: str, out: Path, cfg: dict, say: dict[str, str] | None = Non
                 return Spoken(out, m["duration"], m["words"])
         except (ValueError, KeyError):
             pass
+    import random
+    import time
     last = None
-    for attempt in range(4):
+    for attempt in range(8):
         try:
             words = asyncio.run(_edge(spoken_text, cfg["edge_voice"], cfg.get("rate", "+0%"),
                                       cfg.get("pitch", "+0Hz"), mp3))
             if words and mp3.stat().st_size > 2000:
                 break
             raise RuntimeError("no audio returned")
-        except Exception as e:  # noqa: BLE001 — network hiccups
+        except Exception as e:  # noqa: BLE001 — network hiccups, rate limits, a retired host
             last = e
-            log.warning("voice attempt %d failed: %s", attempt + 1, e)
-            import time
-            time.sleep(2 + 3 * attempt)
+            log.warning("voice attempt %d failed: %s", attempt + 1, str(e).split(", url=")[0])
+            if "403" in str(e):
+                _use_host(_host + 1)
+            time.sleep(min(30, 2 * 2 ** attempt) * random.uniform(0.7, 1.3))
     else:
-        raise RuntimeError(f"edge-tts failed: {last}")
+        raise VoiceError(f"edge-tts failed: {last}")
     subprocess.run([FFMPEG, "-y", "-v", "error", "-i", str(mp3), "-ar", str(SR), "-ac", "1", str(out)], check=True)
     written = text.split()
     aligned = _align(written, words, say)
