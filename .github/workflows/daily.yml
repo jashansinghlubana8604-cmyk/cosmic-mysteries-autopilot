@@ -1,9 +1,8 @@
 name: Daily episode
 
 on:
-  schedule:
-    - cron: "7 4 * * *"      # main run (UTC): makes and schedules the missing episodes
-    - cron: "41 11 * * *"    # safety net: only works if the first run failed or was skipped
+  # PAUSED 2026-10-28 (owner): cloud autopilot held until the private laptop pipeline passes all quality gates.
+  # To resume, restore the schedule block:  - cron: "7 4 * * *"   and   - cron: "41 11 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
