@@ -2,7 +2,7 @@
 
 - Cinematic effects are synthesized (deterministic from a seed): sub booms, risers, whooshes, braams, shimmers,
   text ticks and a low drone bed for cold opens. No sample packs needed.
-- Music: Scott Buckley's cinematic space scores (CC BY 4.0, credited automatically), chosen per section mood, crossfaded,
+- Music: Kevin MacLeod cinematic scores (CC BY 4.0, Scott Buckley retired: Content ID claims, credited automatically), chosen per section mood, crossfaded,
   ducked under the narrator and swelling in the gaps.
 - Master: stereo, -14 LUFS integrated (YouTube's reference), -1.5 dBTP.
 """
